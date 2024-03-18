@@ -13,10 +13,10 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp">
 
         <LinearLayout
+            android:layout_marginHorizontal="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -549,10 +549,12 @@
                     android:id="@+id/signatureView"
                     android:layout_marginStart="4dp"
                     android:src="@color/light_gold"
-                    android:layout_width="200dp"
-                    android:layout_height="80dp"/>
+                    android:layout_width="160dp"
+                    android:layout_height="60dp" />
 
                 <Button
+                    android:background="@drawable/gold_btn_background_round"
+                    app:backgroundTint="@null"
                     android:id="@+id/signatureBtn"
                     android:layout_marginStart="4dp"
                     android:text="@string/pick"
@@ -560,6 +562,14 @@
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/openTC"
+                android:textColor="@color/light_gold"
+                android:layout_gravity="center"
+                android:text="@string/press_here_to_read_terms_and_conditions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <LinearLayout
                 android:id="@+id/tcLL"
@@ -579,13 +589,15 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/openTC"
-                android:textColor="@color/light_gold"
+            <Button
+                app:backgroundTint="@null"
+                android:id="@+id/signupBtn"
+                style="@style/GoldBtn"
+                android:layout_width="match_parent"
                 android:layout_gravity="center"
-                android:text="@string/press_here_to_read_terms_and_conditions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:text="Sign Up">
+
+            </Button>
 
         </LinearLayout>
 
