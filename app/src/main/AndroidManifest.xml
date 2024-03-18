@@ -13,13 +13,16 @@
         android:theme="@style/Theme.BORGI"
         tools:targetApi="31">
         <activity
-            android:windowSoftInputMode="adjustPan"
-            android:name=".SignupActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:theme="@style/Theme.BORGI"
+            android:name=".SignupActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.BORGI">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

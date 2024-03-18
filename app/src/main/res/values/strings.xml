@@ -27,4 +27,12 @@
     <string name="pick">Pick</string>
     <string name="i_agree_with_terms_and_conditions">I agree with \'Terms and Conditions\'</string>
     <string name="press_here_to_read_terms_and_conditions">Press here to read \'Terms and Conditions\'</string>
+    <string name="transfer_to_account">Transfer to account</string>
+    <string name="borrow">Borrow</string>
+    <string name="debts_into_money">Debts into money</string>
+    <string name="total_available_mcg">Total available (mcg):</string>
+    <string name="au">Au</string>
+    <string name="available_limit_mcg">Available limit (mcg):</string>
+    <string name="debts_mcg_minus">Debts - (mcg):</string>
+    <string name="debts_mcg_plus">Debts + (mcg):</string>
 </resources>

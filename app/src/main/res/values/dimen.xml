@@ -1,3 +1,4 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="login_fields_height">65dp</dimen>
+    <dimen name="btn_radius">6dp</dimen>
 </resources>

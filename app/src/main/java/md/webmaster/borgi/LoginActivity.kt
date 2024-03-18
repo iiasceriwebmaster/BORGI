@@ -33,5 +33,9 @@ class LoginActivity : AppCompatActivity() {
         binding.signupTV.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
         }
+
+        binding.loginBtn.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 }

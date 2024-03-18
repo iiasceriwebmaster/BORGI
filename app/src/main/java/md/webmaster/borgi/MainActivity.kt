@@ -5,16 +5,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import md.webmaster.borgi.databinding.ActivitySignupBinding
+import md.webmaster.borgi.databinding.ActivityMainBinding
 
-class SignupActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivitySignupBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivitySignupBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -22,8 +22,6 @@ class SignupActivity : AppCompatActivity() {
             insets
         }
 
-        binding.toolbar.backBtn.setOnClickListener {
-            finish()
-        }
+
     }
 }
