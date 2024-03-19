@@ -5,6 +5,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import md.webmaster.borgi.adapters.MainAdapter
+import md.webmaster.borgi.data.DebtEntity
 import md.webmaster.borgi.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +24,11 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        val listItems = mutableListOf<DebtEntity>()
+        for (i in 0..29) {
+            listItems.add(DebtEntity(i.toLong(), "${i+1} Oct, 2025", "4000 0000 0000 000${i}", "Nr.45891${i}", -15000+(i+1)*1000))
+        }
 
+        binding.mainRV.adapter = MainAdapter(listItems, this)
     }
 }

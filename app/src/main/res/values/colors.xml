@@ -15,4 +15,6 @@
     <color name="red">#D23D45</color>
     <color name="green">#00AE26</color>
     <color name="mcg">#B3FFFFFF</color>
+    <color name="stroke">#33000000</color>
+    <color name="report_item_gray">#808080</color>
 </resources>

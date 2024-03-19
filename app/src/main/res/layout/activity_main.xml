@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Some random nr (q)"
+                android:text="4000   0000   0000   0001 (q)"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -277,6 +277,101 @@
         </LinearLayout>
 
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/search_background"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <EditText
+                    android:textSize="15sp"
+                    android:id="@+id/search_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/search_by_account_nr_or_name"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:textAlignment="center" />
+
+                <ImageView
+                    android:id="@+id/search_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_search" />
+
+
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:src="@drawable/ic_calendar">
+
+            </ImageButton>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparent"
+                android:src="@drawable/ic_sort">
+
+            </ImageButton>
+
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mainRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="10dp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <LinearLayout
+            android:id="@+id/emptyTextLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="60dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/emptyTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NO"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
