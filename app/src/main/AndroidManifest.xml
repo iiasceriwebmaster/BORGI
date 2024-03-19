@@ -13,6 +13,12 @@
         android:theme="@style/Theme.BORGI"
         tools:targetApi="31">
         <activity
+            android:name=".DebtDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DebtsIntoMoneyActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
@@ -22,8 +28,8 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan"
-            android:theme="@style/Theme.BORGI">
+            android:theme="@style/Theme.BORGI"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

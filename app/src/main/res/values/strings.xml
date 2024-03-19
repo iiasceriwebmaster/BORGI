@@ -36,4 +36,5 @@
     <string name="debts_mcg_minus">Debts - (mcg):</string>
     <string name="debts_mcg_plus">Debts + (mcg):</string>
     <string name="search_by_account_nr_or_name">Search by account nr. or name</string>
+    <string name="total_amount_mcg_au">Total amount (mcg) Au:</string>
 </resources>
