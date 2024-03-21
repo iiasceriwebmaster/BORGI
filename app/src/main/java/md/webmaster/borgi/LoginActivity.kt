@@ -32,7 +32,9 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.signupTV.setOnClickListener {
-            startActivity(Intent(this, SignupActivity::class.java))
+            val intent = Intent(this, SignupActivity::class.java)
+            intent.putExtra("title", resources.getString(R.string.sign_up))
+            startActivity(intent)
         }
 
         binding.loginBtn.setOnClickListener {

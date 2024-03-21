@@ -10,12 +10,14 @@
     </data>
 
     <LinearLayout
+        android:background="@color/white"
         android:gravity="center"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:background="@color/white"
             android:layout_marginVertical="12dp"
             android:gravity="top|center"
             android:layout_width="match_parent"

@@ -118,7 +118,7 @@
                     android:layout_marginStart="20dp"
                     android:text="Nicolai Novicov"
                     android:textColor="@color/two_four"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -163,7 +163,7 @@
                     android:layout_marginStart="20dp"
                     android:text="+20 000 (mcg)Au"
                     android:textColor="@color/green"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -211,7 +211,7 @@
                         android:layout_marginStart="20dp"
                         android:text="26 Oct, 2022"
                         android:textColor="@color/two_four"
-                        android:textSize="24sp" />
+                        android:textSize="20sp" />
 
                 </LinearLayout>
 
@@ -245,7 +245,7 @@
                     android:layout_height="wrap_content"
                     android:text="26 Oct, 2022"
                     android:textColor="@color/two_four"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/underSecondDateTV"

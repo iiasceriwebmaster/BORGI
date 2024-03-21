@@ -1,389 +1,416 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/black"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/black">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/drawerBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:backgroundTint="@color/transparent"
-                android:src="@drawable/drawerbtn" />
-
-            <TextView
-                android:id="@+id/toolbarTitleTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="4000   0000   0000   0001 (q)"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
-
-            <ImageButton
-                android:id="@+id/arrowsBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:backgroundTint="@color/transparent"
-                android:src="@drawable/arrows" />
-
-        </RelativeLayout>
-    </Toolbar>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/underline_on_black" />
-
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="26dp">
-
-            <TextView
-                android:id="@+id/totalAvailableMCGTV"
-                android:textSize="14sp"
-                android:textColor="@color/white_70_percent"
-                android:text="@string/total_available_mcg"
-                android:layout_alignParentStart="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <LinearLayout
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_alignParentEnd="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:src="@drawable/infinity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/totalAvailableMCGRightTV"
-                    android:layout_marginStart="4dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/gold"
-                    android:text="@string/au"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-
-        </RelativeLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/underline_on_black" />
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="26dp">
-
-            <TextView
-                android:id="@+id/availableLimitMCGTV"
-                android:textSize="14sp"
-                android:textColor="@color/white_70_percent"
-                android:text="@string/available_limit_mcg"
-                android:layout_alignParentStart="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <LinearLayout
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_alignParentEnd="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:src="@drawable/infinity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/availableLimitMCGRightTV"
-                    android:layout_marginStart="4dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/gold"
-                    android:text="@string/au"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-
-        </RelativeLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/underline_on_black" />
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="26dp">
-
-            <TextView
-                android:id="@+id/debtsMinusMCGTV"
-                android:textSize="14sp"
-                android:textColor="@color/white_70_percent"
-                android:text="@string/debts_mcg_minus"
-                android:layout_alignParentStart="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <LinearLayout
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_alignParentEnd="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-
-                <TextView
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:textColor="@color/red"
-                    android:text="-12 780"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
-                <TextView
-                    android:id="@+id/debtsMinusMCGRightTV"
-                    android:layout_marginStart="4dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/red"
-                    android:text="@string/au"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-
-        </RelativeLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/underline_on_black" />
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="26dp">
-
-            <TextView
-                android:id="@+id/debtsPlusMCGTV"
-                android:textSize="14sp"
-                android:textColor="@color/white_70_percent"
-                android:text="@string/debts_mcg_plus"
-                android:layout_alignParentStart="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <LinearLayout
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_alignParentEnd="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-
-                <TextView
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:textColor="@color/green"
-                    android:text="+20 720"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
-                <TextView
-                    android:id="@+id/debtsPlusMCGRightTV"
-                    android:layout_marginStart="4dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/green"
-                    android:text="@string/au"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/two_one">
-
-        <LinearLayout
-            android:padding="10dp"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <Button
-                android:textSize="16sp"
-                android:id="@+id/goldBtn"
-                android:text="@string/debts_into_money"
-                android:layout_weight="1"
-                style="@style/GoldBtn"
-                android:layout_width="match_parent" />
-
-            <LinearLayout
-                android:id="@+id/redBtn"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:layout_marginStart="6dp"
-                app:backgroundTint="@null"
-                android:layout_weight="1"
-                style="@style/RedBtn"
-                android:layout_width="match_parent">
-
-                <TextView
-                    android:id="@+id/transferToAccountTVBtn"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:text="@string/transfer_to_account"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/transferToAccount2ndTVBtn"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:text="@string/borrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-        </LinearLayout>
-
-
-
-    </LinearLayout>
-
-    <LinearLayout
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/black"
         android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/black">
+
+            <RelativeLayout
+                android:background="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/drawerBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:backgroundTint="@color/transparent"
+                    android:src="@drawable/drawerbtn" />
+
+                <TextView
+                    android:id="@+id/toolbarTitleTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="4000   0000   0000   0001 (q)"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <ImageButton
+                    android:id="@+id/arrowsBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:backgroundTint="@color/transparent"
+                    android:src="@drawable/arrows" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/underline_on_black" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black">
+
+            <RelativeLayout
+                android:background="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp">
+
+                <TextView
+                    android:id="@+id/totalAvailableMCGTV"
+                    android:textSize="14sp"
+                    android:textColor="@color/white_70_percent"
+                    android:text="@string/total_available_mcg"
+                    android:layout_alignParentStart="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:src="@drawable/infinity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/totalAvailableMCGRightTV"
+                        android:layout_marginStart="4dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gold"
+                        android:text="@string/au"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/underline_on_black" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="26dp">
+
+                <TextView
+                    android:id="@+id/availableLimitMCGTV"
+                    android:textSize="14sp"
+                    android:textColor="@color/white_70_percent"
+                    android:text="@string/available_limit_mcg"
+                    android:layout_alignParentStart="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:src="@drawable/infinity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/availableLimitMCGRightTV"
+                        android:layout_marginStart="4dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gold"
+                        android:text="@string/au"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/underline_on_black" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="26dp">
+
+                <TextView
+                    android:id="@+id/debtsMinusMCGTV"
+                    android:textSize="14sp"
+                    android:textColor="@color/white_70_percent"
+                    android:text="@string/debts_mcg_minus"
+                    android:layout_alignParentStart="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/red"
+                        android:text="-12 780"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:id="@+id/debtsMinusMCGRightTV"
+                        android:layout_marginStart="4dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"
+                        android:text="@string/au"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/underline_on_black" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="26dp">
+
+                <TextView
+                    android:id="@+id/debtsPlusMCGTV"
+                    android:textSize="14sp"
+                    android:textColor="@color/white_70_percent"
+                    android:text="@string/debts_mcg_plus"
+                    android:layout_alignParentStart="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/green"
+                        android:text="+20 720"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:id="@+id/debtsPlusMCGRightTV"
+                        android:layout_marginStart="4dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/green"
+                        android:text="@string/au"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/two_one">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:textSize="15sp"
+                    android:id="@+id/goldBtn"
+                    android:text="@string/debts_into_money"
+                    android:layout_weight="1"
+                    style="@style/GoldBtnSquare"
+                    android:layout_width="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/redBtn"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginStart="6dp"
+                    app:backgroundTint="@null"
+                    android:layout_weight="1"
+                    style="@style/RedBtn"
+                    android:layout_width="match_parent">
+
+                    <TextView
+                        android:id="@+id/transferToAccountTVBtn"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:text="@string/transfer_to_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/transferToAccount2ndTVBtn"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:text="@string/borrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/white"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/search_background"
-                android:gravity="center"
-                android:padding="10dp">
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <EditText
-                    android:textSize="15sp"
-                    android:id="@+id/searchET"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:background="@null"
-                    android:hint="@string/search_by_account_nr_or_name"
-                    android:maxLines="1"
-                    android:paddingVertical="10dp"
-                    android:textAlignment="center" />
+                    android:background="@drawable/search_background"
+                    android:gravity="center"
+                    android:padding="10dp">
 
-                <ImageView
-                    android:id="@+id/search_icon"
+                    <EditText
+                        android:textColorHint="@color/zero_thirty"
+                        android:textSize="13sp"
+                        android:id="@+id/searchET"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/search_by_account_nr_or_name"
+                        android:maxLines="1"
+                        android:paddingVertical="10dp"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/search_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_search" />
+
+
+                </LinearLayout>
+
+                <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_search" />
+                    android:backgroundTint="@color/transparent"
+                    android:src="@drawable/ic_calendar">
 
+                </ImageButton>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/transparent"
+                    android:src="@drawable/ic_sort">
+
+                </ImageButton>
 
             </LinearLayout>
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/transparent"
-                android:src="@drawable/ic_calendar">
 
-            </ImageButton>
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="@color/white"
+                android:id="@+id/mainRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="10dp"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/transparent"
-                android:src="@drawable/ic_sort">
+            <LinearLayout
+                android:id="@+id/emptyTextLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="60dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-            </ImageButton>
+                <TextView
+                    android:id="@+id/emptyTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NO"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
 
-        </LinearLayout>
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/mainRV"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="10dp"
-            android:visibility="visible"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-        <LinearLayout
-            android:id="@+id/emptyTextLL"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="60dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/emptyTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NO"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="13sp" />
+            </LinearLayout>
 
         </LinearLayout>
+
 
     </LinearLayout>
 
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/nav_header_nav"
+        app:menu="@menu/activity_main_drawer"
+        />
 
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
+

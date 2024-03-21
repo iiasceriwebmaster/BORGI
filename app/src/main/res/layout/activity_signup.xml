@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".SignupActivity">
 
     <include
@@ -279,7 +280,7 @@
                         android:backgroundTint="@color/underline_on_white"
                         android:drawableStart="@drawable/ic_email_null"
                         android:drawablePadding="20dp"
-                        android:inputType="date"
+                        android:inputType="number"
                         android:maxLines="1"
                         android:textColor="@color/black"
                         android:textColorHint="@color/black_50"
@@ -330,6 +331,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/country" />
@@ -344,6 +346,7 @@
                     app:ccp_showPhoneCode="false" />
 
                 <TextView
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/city" />
@@ -449,7 +452,7 @@
                         android:textColor="@color/black_50" />
 
                     <EditText
-
+                        android:inputType="number"
                         android:id="@+id/flatNr"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -485,6 +488,7 @@
                     app:ccp_showPhoneCode="true" />
 
                 <EditText
+                    android:inputType="phone"
                     android:id="@+id/phoneNr"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -543,6 +547,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:textColor="@color/black"
                     android:text="@string/signature"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -551,15 +556,22 @@
                     android:id="@+id/signatureView"
                     android:layout_marginStart="4dp"
                     android:src="@color/light_gold"
-                    android:layout_width="160dp"
+                    android:layout_width="150dp"
                     android:layout_height="60dp" />
 
+
                 <Button
-                    android:background="@drawable/gold_btn_background_round"
-                    app:backgroundTint="@null"
+                    android:layout_marginStart="10dp"
                     android:id="@+id/signatureBtn"
-                    android:layout_marginStart="4dp"
+                    style="@style/GoldBtnRound"
+                    android:layout_gravity="center"
+                    android:paddingHorizontal="25dp"
+
                     android:text="@string/pick"
+                    android:paddingVertical="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -585,6 +597,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
+                    android:textColor="@color/black"
                     android:text="@string/i_agree_with_terms_and_conditions"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -592,12 +605,11 @@
             </LinearLayout>
 
             <Button
-                app:backgroundTint="@null"
                 android:id="@+id/signupBtn"
-                style="@style/GoldBtn"
+                style="@style/GoldBtnSquare"
                 android:layout_width="match_parent"
                 android:layout_gravity="center"
-                android:text="Sign Up">
+                android:text="@string/sign_up">
 
             </Button>
 

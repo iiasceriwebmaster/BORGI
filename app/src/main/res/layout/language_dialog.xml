@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_app_language"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:drawablePadding="15dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/radioBtnEn"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="@string/english"
+                android:drawableStart="@drawable/flag_united_kingdom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:drawablePadding="15dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/radioBtnRu"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="@string/russian"
+                android:drawableStart="@drawable/flag_russian_federation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:drawablePadding="15dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/radioBtnUa"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="@string/ukrainian"
+                android:drawableStart="@drawable/flag_ukraine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_gravity="end"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="10dp"
+        style="@style/GoldBtnRound"
+        android:id="@+id/cancelBtn"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:text="@string/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

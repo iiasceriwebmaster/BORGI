@@ -22,6 +22,8 @@ class SignupActivity : AppCompatActivity() {
             insets
         }
 
+        binding.toolbar.toolbarTV.text = intent.getStringExtra("title") ?: "Missing Title"
+
         binding.toolbar.backBtn.setOnClickListener {
             finish()
         }
