@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import md.webmaster.borgi.adapters.MainAdapter
@@ -35,5 +36,24 @@ class MainActivity : AppCompatActivity() {
         binding.goldBtn.setOnClickListener {
             startActivity(Intent(this, DebtsIntoMoneyActivity::class.java))
         }
+        binding.redBtn.setOnClickListener {
+            startActivity(Intent(this, TransferToAccountActivity::class.java))
+        }
+
+        binding.toolbarTitleTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+        binding.totalAvailableMCGTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+        binding.availableLimitMCGTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+        binding.debtsMinusMCGTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+        binding.debtsPlusMCGTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+        binding.totalAvailableMCGRightTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_bold))
+        binding.availableLimitMCGRightTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_bold))
+        binding.debtsMinusMCGRightTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_bold))
+        binding.debtsPlusMCGRightTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_bold))
+
+        binding.goldBtn.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+        binding.transferToAccount2ndTVBtn.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+        binding.transferToAccountTVBtn.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+
+        binding.searchET.setTypeface(ResourcesCompat.getFont(this, R.font.onest_regular))
     }
 }

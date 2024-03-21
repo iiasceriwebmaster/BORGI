@@ -3,6 +3,7 @@
 
     <style name="GoldBtn">
 
+        <item name="backgroundTint">@null</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:layout_height">@dimen/login_fields_height</item>
         <item name="android:background">@drawable/gold_btn_background</item>

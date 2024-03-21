@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="debt"
+            type="md.webmaster.borgi.data.DebtEntity" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:text="12 Jan, 2023"
+                android:textColor="@color/eight_zero"
+                android:textSize="12sp"
+                android:id="@+id/debtDateTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/debtAmountTV"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:textSize="16sp"
+                android:textColor="@color/two_four"
+                android:text="10 100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <View
+            android:background="@color/underline_on_white"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+
+
+</layout>

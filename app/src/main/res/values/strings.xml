@@ -8,8 +8,10 @@
     <string name="log_in">Log in</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="login">Login</string>
-    <string name="name">*Name</string>
-    <string name="surname">*Surname</string>
+    <string name="name_asterisk">*Name</string>
+    <string name="name">Name</string>
+    <string name="surname_asterisk">*Surname</string>
+    <string name="surname">Surname</string>
     <string name="middle_name">Middle Name</string>
     <string name="optional">(Optional)</string>
     <string name="date_of_birth">Date of Birth</string>
@@ -37,4 +39,13 @@
     <string name="debts_mcg_plus">Debts + (mcg):</string>
     <string name="search_by_account_nr_or_name">Search by account nr. or name</string>
     <string name="total_amount_mcg_au">Total amount (mcg) Au:</string>
+    <string name="balance_due_mcg">Balance Due (mcg):</string>
+    <string name="converted_to_money_mcg">Converted to money (mcg):</string>
+    <string name="debt_sum">Debt Sum</string>
+    <string name="date_when_created">Date when created</string>
+    <string name="debt_to_be_fulfilled_by">Debt to be fulfilled by</string>
+    <string name="transfer_to_account_borrow">Transfer to account (borrow)</string>
+    <string name="account_number">Account Number</string>
+    <string name="loan_amount">Loan amount</string>
+    <string name="continueJAVAISSTUPID">Continue</string>
 </resources>

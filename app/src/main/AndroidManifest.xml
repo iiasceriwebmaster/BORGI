@@ -13,6 +13,9 @@
         android:theme="@style/Theme.BORGI"
         tools:targetApi="31">
         <activity
+            android:name=".TransferToAccountActivity"
+            android:exported="false" />
+        <activity
             android:name=".DebtDetailsActivity"
             android:exported="false" />
         <activity

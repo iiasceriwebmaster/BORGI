@@ -3,6 +3,7 @@ package md.webmaster.borgi
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import md.webmaster.borgi.adapters.MainAdapter
@@ -33,5 +34,9 @@ class DebtsIntoMoneyActivity : AppCompatActivity() {
         binding.backBtn.setOnClickListener {
             finish()
         }
+
+        binding.titleTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+        binding.totalAmountMCGAUTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+        binding.totalAmountMCGAU2ndTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_bold))
     }
 }

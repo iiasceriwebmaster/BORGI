@@ -27,13 +27,13 @@
                 android:src="@drawable/drawerbtn" />
 
             <TextView
+                android:id="@+id/toolbarTitleTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="4000   0000   0000   0001 (q)"
                 android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
 
             <ImageButton
                 android:id="@+id/arrowsBtn"
@@ -63,8 +63,9 @@
             android:layout_height="26dp">
 
             <TextView
+                android:id="@+id/totalAvailableMCGTV"
                 android:textSize="14sp"
-                android:textColor="@color/mcg"
+                android:textColor="@color/white_70_percent"
                 android:text="@string/total_available_mcg"
                 android:layout_alignParentStart="true"
                 android:layout_width="wrap_content"
@@ -83,6 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:id="@+id/totalAvailableMCGRightTV"
                     android:layout_marginStart="4dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -104,8 +106,9 @@
             android:layout_height="26dp">
 
             <TextView
+                android:id="@+id/availableLimitMCGTV"
                 android:textSize="14sp"
-                android:textColor="@color/mcg"
+                android:textColor="@color/white_70_percent"
                 android:text="@string/available_limit_mcg"
                 android:layout_alignParentStart="true"
                 android:layout_width="wrap_content"
@@ -124,6 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:id="@+id/availableLimitMCGRightTV"
                     android:layout_marginStart="4dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -145,8 +149,9 @@
             android:layout_height="26dp">
 
             <TextView
+                android:id="@+id/debtsMinusMCGTV"
                 android:textSize="14sp"
-                android:textColor="@color/mcg"
+                android:textColor="@color/white_70_percent"
                 android:text="@string/debts_mcg_minus"
                 android:layout_alignParentStart="true"
                 android:layout_width="wrap_content"
@@ -169,6 +174,7 @@
                     android:layout_height="wrap_content"
                     />
                 <TextView
+                    android:id="@+id/debtsMinusMCGRightTV"
                     android:layout_marginStart="4dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -190,8 +196,9 @@
             android:layout_height="26dp">
 
             <TextView
+                android:id="@+id/debtsPlusMCGTV"
                 android:textSize="14sp"
-                android:textColor="@color/mcg"
+                android:textColor="@color/white_70_percent"
                 android:text="@string/debts_mcg_plus"
                 android:layout_alignParentStart="true"
                 android:layout_width="wrap_content"
@@ -214,6 +221,7 @@
                     android:layout_height="wrap_content"
                     />
                 <TextView
+                    android:id="@+id/debtsPlusMCGRightTV"
                     android:layout_marginStart="4dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -233,7 +241,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/twoone">
+        android:background="@color/two_one">
 
         <LinearLayout
             android:padding="10dp"
@@ -241,9 +249,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <Button
+                android:textSize="16sp"
                 android:id="@+id/goldBtn"
                 android:text="@string/debts_into_money"
-                app:backgroundTint="@null"
                 android:layout_weight="1"
                 style="@style/GoldBtn"
                 android:layout_width="match_parent" />
@@ -259,7 +267,8 @@
                 android:layout_width="match_parent">
 
                 <TextView
-                    android:textSize="19sp"
+                    android:id="@+id/transferToAccountTVBtn"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:text="@string/transfer_to_account"
@@ -267,6 +276,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
+                    android:id="@+id/transferToAccount2ndTVBtn"
                     android:textSize="12sp"
                     android:textColor="@color/white"
                     android:text="@string/borrow"
@@ -304,7 +314,7 @@
 
                 <EditText
                     android:textSize="15sp"
-                    android:id="@+id/search_edit_text"
+                    android:id="@+id/searchET"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"

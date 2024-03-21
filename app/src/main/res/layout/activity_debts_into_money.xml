@@ -29,6 +29,7 @@
                     style="@style/ToolbarBackBtn" />
 
                 <TextView
+                    android:id="@+id/titleTV"
                     android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -48,13 +49,15 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:textColor="@color/mcg"
+                    android:id="@+id/totalAmountMCGAUTV"
+                    android:textColor="@color/white_70_percent"
                     android:textSize="14sp"
                     android:text="@string/total_amount_mcg_au"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
                 <TextView
+                    android:id="@+id/totalAmountMCGAU2ndTV"
                     android:textStyle="bold"
                     android:textColor="@color/green"
                     android:textSize="18sp"

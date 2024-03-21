@@ -5,6 +5,7 @@ import android.graphics.Paint
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import md.webmaster.borgi.databinding.ActivityLoginBinding
@@ -37,5 +38,12 @@ class LoginActivity : AppCompatActivity() {
         binding.loginBtn.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
+
+        binding.email.setTypeface(ResourcesCompat.getFont(this, R.font.onest_regular))
+        binding.password.setTypeface(ResourcesCompat.getFont(this, R.font.onest_regular))
+        binding.dontHaveAccTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_regular))
+        binding.signupTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+        binding.loginBtn.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
+        binding.forgotPasswordTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_regular))
     }
 }

@@ -1,11 +1,15 @@
 package md.webmaster.borgi.adapters
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
+import md.webmaster.borgi.DebtDetailsActivity
 import md.webmaster.borgi.R
 import md.webmaster.borgi.data.DebtEntity
 
@@ -30,11 +34,6 @@ class MainAdapter(
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val debtItem = debts[position]
 
-        holder.dateTV.text = debtItem.date
-        holder.nrTV.text = debtItem.nr
-        holder.accountTV.text = debtItem.account
-
-
         val debtAmount = debtItem.debtAmount
         if (debtAmount > 0) {
             holder.debtAmountTV.setTextColor(context.getColor(R.color.green))
@@ -46,10 +45,20 @@ class MainAdapter(
         var debtText = debtAmount.toString()
         if (debtAmount > 0)
             debtText = "+$debtText"
+
         holder.debtAmountTV.text = debtText
+        holder.dateTV.text = debtItem.date
+        holder.nrTV.text = debtItem.nr
+        holder.accountTV.text = debtItem.account
 
+        holder.itemView.setOnClickListener {
+            context.startActivity(Intent(context as Activity, DebtDetailsActivity::class.java))
+        }
 
-//        holder.reportDate.setTypeface(ResourcesCompat.getFont(context, R.font.roboto_regular))
+        holder.dateTV.setTypeface(ResourcesCompat.getFont(context, R.font.onest_regular))
+        holder.nrTV.setTypeface(ResourcesCompat.getFont(context, R.font.onest_regular))
+        holder.accountTV.setTypeface(ResourcesCompat.getFont(context, R.font.onest_regular))
+        holder.debtAmountTV.setTypeface(ResourcesCompat.getFont(context, R.font.onest_medium))
     }
 
 }
