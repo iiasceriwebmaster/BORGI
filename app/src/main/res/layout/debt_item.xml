@@ -35,7 +35,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:text="26 oct, 2023"
@@ -51,7 +51,7 @@
                 android:layout_weight="1"
                 android:text="Nr.458912"
                 android:id="@+id/nr"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
