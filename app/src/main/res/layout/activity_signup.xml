@@ -142,6 +142,7 @@
 <!--                    android:layout_weight="1" />-->
 
 <!--            </LinearLayout>-->
+<!--            A gypsy comes into a bar and bartender asks how is ur day? Gypsy answers: got a new car horse. badum tsss-->
 
             <LinearLayout
                 android:layout_width="match_parent"
