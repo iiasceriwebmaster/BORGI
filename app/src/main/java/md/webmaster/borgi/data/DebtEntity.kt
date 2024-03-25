@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "debts_info")
 data class DebtEntity(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    @PrimaryKey(autoGenerate = true) val id: Long = 1,
     @ColumnInfo(name = "date") val date: String?,
     @ColumnInfo(name = "account") val account: String?,
     @ColumnInfo(name = "nr") val nr: String?,

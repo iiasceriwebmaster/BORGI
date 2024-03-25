@@ -355,7 +355,7 @@
 
                 <EditText
                     android:id="@+id/city"
-
+                    android:hint="New York"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/underline_on_white"
@@ -398,7 +398,7 @@
                     </LinearLayout>
 
                     <EditText
-
+                        android:hint="Avenue str"
                         android:id="@+id/street"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -427,7 +427,7 @@
                         android:textColor="@color/black_50" />
 
                     <EditText
-
+                        android:hint="29"
                         android:id="@+id/house"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -454,6 +454,7 @@
                         android:textColor="@color/black_50" />
 
                     <EditText
+                        android:hint="58"
                         android:inputType="number"
                         android:id="@+id/flatNr"
                         android:layout_width="match_parent"
@@ -490,6 +491,7 @@
                     app:ccp_showPhoneCode="true" />
 
                 <EditText
+                    android:hint="78 77 56 56"
                     android:inputType="phone"
                     android:id="@+id/phoneNr"
                     android:layout_width="match_parent"
