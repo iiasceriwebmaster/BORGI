@@ -10,12 +10,16 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import md.webmaster.borgi.adapters.MainAdapter
+import md.webmaster.borgi.data.BorgiDatabase
 import md.webmaster.borgi.data.DebtEntity
 import md.webmaster.borgi.databinding.ActivityMainBinding
+import md.webmaster.borgi.viewmodel.UserViewModel
 
 class MainActivity : AppCompatActivity(), LanguageDialogFragment.DialogLanguageFragmentListener {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var userViewModel: UserViewModel
+    private lateinit var appDatabase: BorgiDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +31,9 @@ class MainActivity : AppCompatActivity(), LanguageDialogFragment.DialogLanguageF
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        appDatabase = BorgiDatabase.getInstance(applicationContext)
+        userViewModel = UserViewModel(appDatabase.userDao())
 
         val listItems = mutableListOf<DebtEntity>()
         for (i in 0..29) {
@@ -50,19 +57,13 @@ class MainActivity : AppCompatActivity(), LanguageDialogFragment.DialogLanguageF
         setUpNavClicks(this)
 
 
-//        binding.toolbarTitleTV.text = ""
     }
 
-    fun showLanguageDialog() {
-
-    }
-
-    fun logoutUser() {
-        // Perform logout action, such as clearing user session and navigating to the login screen
-        // For example:
+    private fun logoutUser() {
+        userViewModel.deleteAll()
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
-        finish() // Finish the MainActivity to prevent returning to it after logout
+        finish()
     }
 
 
@@ -98,7 +99,7 @@ class MainActivity : AppCompatActivity(), LanguageDialogFragment.DialogLanguageF
         }
     }
 
-    fun setUpFonts() {
+    private fun setUpFonts() {
         binding.toolbarTitleTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
         binding.totalAvailableMCGTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
         binding.availableLimitMCGTV.setTypeface(ResourcesCompat.getFont(this, R.font.onest_medium))
@@ -147,5 +148,6 @@ class MainActivity : AppCompatActivity(), LanguageDialogFragment.DialogLanguageF
 
     override fun onLanguagePicked(lang: String) {
         //nothing yet
+        //TODO: implement
     }
 }

@@ -6,8 +6,10 @@ import androidx.lifecycle.ViewModel
 import md.webmaster.borgi.data.UserDao
 import md.webmaster.borgi.data.UserEntity
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import md.webmaster.borgi.BitmapConverter.convertStringToBitmap
 
 class UserViewModel(val userDao: UserDao): ViewModel() {
@@ -36,6 +38,10 @@ class UserViewModel(val userDao: UserDao): ViewModel() {
         val signature = user.signature
         val bitmap = convertStringToBitmap(signature)
         signatureBitmap.postValue(bitmap)
+    }
+
+    fun addSelectedImage(imageBitmap: Bitmap) {
+        signatureBitmap.postValue(imageBitmap)
     }
 
 }

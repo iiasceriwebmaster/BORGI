@@ -8,14 +8,36 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
+import md.webmaster.borgi.data.BorgiDatabase
 import md.webmaster.borgi.databinding.ActivityLoginBinding
+import md.webmaster.borgi.viewmodel.UserViewModel
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityLoginBinding
+    private lateinit var userViewModel: UserViewModel
+    private lateinit var appDatabase: BorgiDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        runBlocking {
+            appDatabase = BorgiDatabase.getInstance(applicationContext)
+            userViewModel = UserViewModel(appDatabase.userDao())
+            withContext(Dispatchers.IO) {
+                val userEntities = userViewModel.getAll()
+                if (userEntities.isNotEmpty()) {
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+        }
+
         enableEdgeToEdge()
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)

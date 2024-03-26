@@ -8,10 +8,11 @@ import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 import com.google.gson.Gson
 
-@Database(entities = [DebtEntity::class], version = 2)
+@Database(entities = [DebtEntity::class, UserEntity::class], version = 2)
 @TypeConverters(Converters::class)
 abstract class BorgiDatabase: RoomDatabase() {
     abstract fun debtDao(): DebtDao
+    abstract fun userDao(): UserDao
 
     companion object {
         @Volatile

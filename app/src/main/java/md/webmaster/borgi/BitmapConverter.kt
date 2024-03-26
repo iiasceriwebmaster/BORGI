@@ -3,6 +3,7 @@ package md.webmaster.borgi
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
+import android.util.Log
 import java.io.ByteArrayOutputStream
 
 object BitmapConverter {
@@ -20,6 +21,7 @@ object BitmapConverter {
             BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.size)
         } catch (e:Exception) {
             e.printStackTrace()
+            e.cause?.message?.let { Log.e("Bitmapconverter", it) }
             null
         }
     }
