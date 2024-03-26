@@ -26,7 +26,7 @@ class DebtsIntoMoneyActivity : AppCompatActivity() {
 
         val listItems = mutableListOf<DebtEntity>()
         for (i in 0..29) {
-            listItems.add(DebtEntity(i.toLong(), "${i+1} Oct, 2025", "4000 0000 0000 000${i}", "Nr.45891${i}", (i+1)*1000))
+            listItems.add(DebtEntity(i.toLong(), "${i+1} Oct, 2025", 4000000000000000+i, "Nr.45891${i}", (i+1)*1000))
         }
 
         binding.debtsRV.adapter = MainAdapter(listItems, this)

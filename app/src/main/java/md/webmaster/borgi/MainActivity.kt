@@ -3,6 +3,8 @@ package md.webmaster.borgi
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -37,10 +39,25 @@ class MainActivity : AppCompatActivity(), LanguageDialogFragment.DialogLanguageF
 
         val listItems = mutableListOf<DebtEntity>()
         for (i in 0..29) {
-            listItems.add(DebtEntity(i.toLong(), "${i+1} Oct, 2025", "4000 0000 0000 000${i}", "Nr.45891${i}", -15000+(i+1)*1000))
+            listItems.add(DebtEntity(i.toLong(), "${i+1} Oct, 2025", 4000000000000000+i, "Nr.45891${i}", -15000+(i+1)*1000))
         }
 
         binding.mainRV.adapter = MainAdapter(listItems, this)
+
+        binding.searchET.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                // Filter the adapter based on the text entered
+                ((binding.mainRV.adapter) as MainAdapter).filterFromSearchBar(s.toString())
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // Not needed
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // Not needed
+            }
+        })
 
         binding.goldBtn.setOnClickListener {
             startActivity(Intent(this, DebtsIntoMoneyActivity::class.java))
@@ -50,6 +67,10 @@ class MainActivity : AppCompatActivity(), LanguageDialogFragment.DialogLanguageF
         }
         binding.drawerBtn.setOnClickListener {
             binding.main.open()
+        }
+
+        binding.sortBtn.setOnClickListener {
+            ((binding.mainRV.adapter) as MainAdapter).filterFromBtn(isSort = true)
         }
 
         setUpFonts()

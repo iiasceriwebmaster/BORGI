@@ -38,8 +38,14 @@ abstract class BorgiDatabase: RoomDatabase() {
 class Converters {
 
     @TypeConverter
-    fun listToJson(value: List<String>?) = Gson().toJson(value)
+    fun strListToJson(value: List<String>?) = Gson().toJson(value)
 
     @TypeConverter
-    fun jsonToList(value: String) = Gson().fromJson(value, Array<String>::class.java).toList()
+    fun longListToJson(value: List<Long>?) = Gson().toJson(value)
+
+    @TypeConverter
+    fun jsonToStringList(value: String) = Gson().fromJson(value, Array<String>::class.java).toList()
+
+    @TypeConverter
+    fun jsonToLongList(value: String) = Gson().fromJson(value, Array<Long>::class.java).toList()
 }

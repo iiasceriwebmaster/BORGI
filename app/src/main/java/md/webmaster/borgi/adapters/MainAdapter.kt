@@ -17,6 +17,40 @@ class MainAdapter(
     private var debts: List<DebtEntity>,
     val context: Context
 ) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+
+    private var originalDebts: List<DebtEntity> = debts.toList()
+
+    fun filterFromSearchBar(text: String) {
+        debts = if (text.isEmpty()) {
+            originalDebts.toList()
+        } else {
+            originalDebts.filter { debt ->
+                debt.nr?.contains(text, ignoreCase = true) == true || debt.account.toString()
+                    .contains(
+                        text,
+                        ignoreCase = true
+                    )
+            }
+        }
+        notifyDataSetChanged()
+    }
+
+    fun filterFromBtn(date: String = "", isSort: Boolean = false) {
+        if (date.isEmpty() && !isSort) {
+            debts = originalDebts.toList()
+        } else {
+            if (date.isNotEmpty()) {
+                debts = originalDebts.filter { debt ->
+                    debt.date == date
+                }
+            }
+            if (isSort) {
+                debts = debts.sortedBy { it.debtAmount }
+            }
+        }
+        notifyDataSetChanged()
+    }
+
     inner class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val dateTV: TextView = itemView.findViewById<TextView>(R.id.date)
         val accountTV: TextView = itemView.findViewById(R.id.account)
@@ -49,7 +83,7 @@ class MainAdapter(
         holder.debtAmountTV.text = debtText
         holder.dateTV.text = debtItem.date
         holder.nrTV.text = debtItem.nr
-        holder.accountTV.text = debtItem.account
+        holder.accountTV.text = debtItem.account.toString().chunked(4).joinToString(separator = " ")
 
         holder.itemView.setOnClickListener {
             context.startActivity(Intent(context as Activity, DebtDetailsActivity::class.java))

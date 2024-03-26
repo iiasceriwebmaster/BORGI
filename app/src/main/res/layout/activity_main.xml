@@ -349,6 +349,7 @@
                 </LinearLayout>
 
                 <ImageButton
+                    android:id="@+id/dateBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/transparent"
@@ -357,6 +358,7 @@
                 </ImageButton>
 
                 <ImageButton
+                    android:id="@+id/sortBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/transparent"
@@ -373,7 +375,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="10dp"
                 android:visibility="visible"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 

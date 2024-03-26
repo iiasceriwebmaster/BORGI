@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "user")
 data class UserEntity(
-    @PrimaryKey(autoGenerate = true) val id: Long = 1,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
     @ColumnInfo(name = "first_name") val firstName: String,
     @ColumnInfo(name = "last_name") val lastName: String,
     @ColumnInfo(name = "middle_name") val middleName: String = "",
@@ -22,4 +22,7 @@ data class UserEntity(
     @ColumnInfo(name = "phone_nr") val phoneNr: String,
     @ColumnInfo(name = "passport_issue_date") val passportIssueDate: String?,
     @ColumnInfo(name = "signature") val signature: String,
+    @ColumnInfo(name = "is_user_verified") val isUserVerified: Boolean = false,
+    @ColumnInfo(name = "account_type_2") val accountsTypeTwo: List<Long> = mutableListOf(),
+    @ColumnInfo(name = "account_type_3") val accountsTypeThree: List<Long> = mutableListOf()
 )
