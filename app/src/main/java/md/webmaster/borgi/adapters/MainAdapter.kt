@@ -45,7 +45,7 @@ class MainAdapter(
                 }
             }
             if (isSort) {
-                debts = debts.sortedBy { it.debtAmount }
+                debts = debts.sortedByDescending { it.debtAmount }
             }
         }
         notifyDataSetChanged()
