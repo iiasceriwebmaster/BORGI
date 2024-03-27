@@ -6,13 +6,12 @@ import androidx.lifecycle.ViewModel
 import md.webmaster.borgi.data.UserDao
 import md.webmaster.borgi.data.UserEntity
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
-import md.webmaster.borgi.BitmapConverter.convertStringToBitmap
+import md.webmaster.borgi.tools.BitmapConverter.convertStringToBitmap
+import md.webmaster.borgi.data.DebtDao
 
-class UserViewModel(val userDao: UserDao): ViewModel() {
+class UserViewModel(val userDao: UserDao, val debtDao: DebtDao): ViewModel() {
 
     val signatureBitmap: MutableLiveData<Bitmap?> = MutableLiveData()
 

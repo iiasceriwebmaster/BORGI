@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".SignupActivity">
+    tools:context=".activities.SignupActivity">
 
     <include
         android:id="@+id/toolbar"

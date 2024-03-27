@@ -23,6 +23,11 @@ data class UserEntity(
     @ColumnInfo(name = "passport_issue_date") val passportIssueDate: String?,
     @ColumnInfo(name = "signature") val signature: String,
     @ColumnInfo(name = "is_user_verified") val isUserVerified: Boolean = false,
-    @ColumnInfo(name = "account_type_2") val accountsTypeTwo: List<Long> = mutableListOf(),
-    @ColumnInfo(name = "account_type_3") val accountsTypeThree: List<Long> = mutableListOf()
-)
+    @ColumnInfo(name = "account_type_2") var accountTypeTwo: Long = 4000000000000000 + id,
+    @ColumnInfo(name = "account_type_3") var accountTypeThree: Long = 7000000000000000 + id
+) {
+    init {
+        accountTypeTwo = 4000000000000000 + id
+        accountTypeThree = 7000000000000000 + id
+    }
+}

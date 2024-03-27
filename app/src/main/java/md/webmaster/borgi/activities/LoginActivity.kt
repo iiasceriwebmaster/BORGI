@@ -1,4 +1,4 @@
-package md.webmaster.borgi
+package md.webmaster.borgi.activities
 
 import android.content.Intent
 import android.graphics.Paint
@@ -8,11 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import md.webmaster.borgi.R
 import md.webmaster.borgi.data.BorgiDatabase
 import md.webmaster.borgi.databinding.ActivityLoginBinding
 import md.webmaster.borgi.viewmodel.UserViewModel
@@ -27,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         runBlocking {
             appDatabase = BorgiDatabase.getInstance(applicationContext)
-            userViewModel = UserViewModel(appDatabase.userDao())
+            userViewModel = UserViewModel(appDatabase.userDao(), appDatabase.debtDao())
             withContext(Dispatchers.IO) {
                 val userEntities = userViewModel.getAll()
                 if (userEntities.isNotEmpty()) {
@@ -60,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.loginBtn.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+//            startActivity(Intent(this, MainActivity::class.java))
         }
 
         binding.email.setTypeface(ResourcesCompat.getFont(this, R.font.onest_regular))

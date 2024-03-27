@@ -1,4 +1,4 @@
-package md.webmaster.borgi
+package md.webmaster.borgi.activities
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import md.webmaster.borgi.R
 import md.webmaster.borgi.adapters.MainAdapter
 import md.webmaster.borgi.data.DebtEntity
 import md.webmaster.borgi.databinding.ActivityDebtsIntoMoneyBinding

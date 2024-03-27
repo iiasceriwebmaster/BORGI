@@ -1,4 +1,4 @@
-package md.webmaster.borgi
+package md.webmaster.borgi.tools
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

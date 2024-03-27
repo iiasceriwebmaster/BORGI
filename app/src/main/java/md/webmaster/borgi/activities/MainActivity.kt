@@ -1,4 +1,4 @@
-package md.webmaster.borgi
+package md.webmaster.borgi.activities
 
 import android.content.Context
 import android.content.Intent
@@ -11,10 +11,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
+import md.webmaster.borgi.AccountPickerDialogFragment
+import md.webmaster.borgi.LanguageDialogFragment
+import md.webmaster.borgi.R
 import md.webmaster.borgi.adapters.MainAdapter
 import md.webmaster.borgi.data.BorgiDatabase
 import md.webmaster.borgi.data.DebtEntity
+import md.webmaster.borgi.data.UserEntity
 import md.webmaster.borgi.databinding.ActivityMainBinding
+import md.webmaster.borgi.tools.Extensions.chunkedToString
 import md.webmaster.borgi.viewmodel.UserViewModel
 
 class MainActivity : AppCompatActivity(), LanguageDialogFragment.DialogLanguageFragmentListener {
@@ -22,10 +30,20 @@ class MainActivity : AppCompatActivity(), LanguageDialogFragment.DialogLanguageF
     private lateinit var binding: ActivityMainBinding
     private lateinit var userViewModel: UserViewModel
     private lateinit var appDatabase: BorgiDatabase
+    private lateinit var userEntity: UserEntity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        runBlocking {
+            appDatabase = BorgiDatabase.getInstance(applicationContext)
+            userViewModel = UserViewModel(appDatabase.userDao(), appDatabase.debtDao())
+            withContext(Dispatchers.IO) {
+                userEntity = userViewModel.getAll()[0]
+            }
+        }
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
@@ -34,15 +52,40 @@ class MainActivity : AppCompatActivity(), LanguageDialogFragment.DialogLanguageF
             insets
         }
 
-        appDatabase = BorgiDatabase.getInstance(applicationContext)
-        userViewModel = UserViewModel(appDatabase.userDao())
-
         val listItems = mutableListOf<DebtEntity>()
         for (i in 0..29) {
-            listItems.add(DebtEntity(i.toLong(), "${i+1} Oct, 2025", 4000000000000000+i, "Nr.45891${i}", -15000+(i+1)*1000))
+            if (i % 2 == 0) {
+                listItems.add(
+                    DebtEntity(
+                        i.toLong(),
+                        "${i + 1} Oct, 2025",
+                        4000000000000000 + i,
+                        "Nr.45891${i}",
+                        -15000 + (i + 1) * 1000
+                    )
+                )
+            } else {
+                listItems.add(
+                    DebtEntity(
+                        i.toLong(),
+                        "${i + 1} Oct, 2025",
+                        7000000000000000 + i,
+                        "Nr.45891${i}",
+                        -15000 + (i + 1) * 1000
+                    )
+                )
+            }
         }
 
-        binding.mainRV.adapter = MainAdapter(listItems, this)
+        val accountTypeOneList = listItems.filter { debt ->
+            debt.account.toString().startsWith("4")
+        }
+
+        val accountTypeTwoList = listItems.filter { debt ->
+            debt.account.toString().startsWith("7")
+        }
+
+        binding.mainRV.adapter = MainAdapter(accountTypeOneList, this)
 
         binding.searchET.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -77,7 +120,23 @@ class MainActivity : AppCompatActivity(), LanguageDialogFragment.DialogLanguageF
         updateNavigationHeader()
         setUpNavClicks(this)
 
+        binding.toolbarTitleTV.text = userEntity.accountTypeTwo.chunkedToString()
 
+        binding.arrowsBtn.setOnClickListener {
+            val dialog = AccountPickerDialogFragment(
+                userEntity.accountTypeTwo,
+                userEntity.accountTypeThree
+            ) { isFirstAccount ->
+                if (isFirstAccount) {
+                    binding.toolbarTitleTV.text = userEntity.accountTypeTwo.chunkedToString()
+                    binding.mainRV.adapter = MainAdapter(accountTypeOneList, this)
+                } else {
+                    binding.toolbarTitleTV.text = userEntity.accountTypeThree.chunkedToString()
+                    binding.mainRV.adapter = MainAdapter(accountTypeTwoList, this)
+                }
+            }
+            dialog.show(supportFragmentManager, "AccountPickerDialogFragment")
+        }
     }
 
     private fun logoutUser() {

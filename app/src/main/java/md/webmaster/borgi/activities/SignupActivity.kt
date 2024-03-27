@@ -1,4 +1,4 @@
-package md.webmaster.borgi
+package md.webmaster.borgi.activities
 
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -8,7 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import md.webmaster.borgi.BitmapConverter.convertBitmapToString
+import kotlinx.coroutines.runBlocking
+import md.webmaster.borgi.tools.BitmapConverter.convertBitmapToString
 import md.webmaster.borgi.data.BorgiDatabase
 import md.webmaster.borgi.data.UserEntity
 import md.webmaster.borgi.databinding.ActivitySignupBinding
@@ -72,7 +73,9 @@ class SignupActivity : AppCompatActivity() {
                     it1
                 )
             }?.let { it2 ->
-                userViewModel.insert(UserEntity(
+                runBlocking {
+                    userViewModel.insert(
+                        UserEntity(
                     firstName = name,
                     lastName = surname,
                     email = email,
@@ -87,7 +90,9 @@ class SignupActivity : AppCompatActivity() {
                     phoneNr = phoneNr,
                     passportIssueDate = passportIssueDate,
                     signature = it2
-                ))
+                        )
+                    )
+                }
             }
 
             val intent = Intent(this, MainActivity::class.java)
@@ -96,7 +101,7 @@ class SignupActivity : AppCompatActivity() {
         }
 
         appDatabase = BorgiDatabase.getInstance(applicationContext)
-        userViewModel = UserViewModel(appDatabase.userDao())
+        userViewModel = UserViewModel(appDatabase.userDao(), appDatabase.debtDao())
 
         userViewModel.signatureBitmap.observe(
             this@SignupActivity

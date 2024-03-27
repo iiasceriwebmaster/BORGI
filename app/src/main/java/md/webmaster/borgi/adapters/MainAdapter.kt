@@ -9,9 +9,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
-import md.webmaster.borgi.DebtDetailsActivity
+import md.webmaster.borgi.activities.DebtDetailsActivity
 import md.webmaster.borgi.R
 import md.webmaster.borgi.data.DebtEntity
+import md.webmaster.borgi.tools.Extensions.chunkedToString
 
 class MainAdapter(
     private var debts: List<DebtEntity>,
@@ -83,7 +84,7 @@ class MainAdapter(
         holder.debtAmountTV.text = debtText
         holder.dateTV.text = debtItem.date
         holder.nrTV.text = debtItem.nr
-        holder.accountTV.text = debtItem.account.toString().chunked(4).joinToString(separator = " ")
+        holder.accountTV.text = debtItem.account?.chunkedToString()
 
         holder.itemView.setOnClickListener {
             context.startActivity(Intent(context as Activity, DebtDetailsActivity::class.java))
